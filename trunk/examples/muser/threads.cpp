@@ -133,6 +133,10 @@ THREAD (song_player_1)
 {
  BEGIN_THREAD (VOICE_1_START);
 
+ /*
+   Note: variables whose value must be preserved across invocations of
+   ThreadKit scheduling macros must be declared static.
+ */
  static int i;
  
  for (i = 0; true; i++)
@@ -164,6 +168,10 @@ THREAD (song_player_2)
 {
  BEGIN_THREAD (VOICE_2_START);
 
+ /*
+   Note: variables whose value must be preserved across invocations of
+   ThreadKit scheduling macros must be declared static.
+ */
  static int i;
  
  for (i = 0; true; i++)
@@ -193,6 +201,10 @@ THREAD (tone_tester)
 {
  BEGIN_THREAD (NEVER);
 
+ /*
+   Note: variables whose value must be preserved across invocations of
+   ThreadKit scheduling macros must be declared static.
+ */
  static int i;
 
  // From A0 (lowest piano key) to C8 (highest piano key)
@@ -232,6 +244,10 @@ THREAD (yield_tester)
 {
  BEGIN_THREAD (STARTUP);
 
+ /*
+   Note: variables whose value must be preserved across invocations of
+   ThreadKit scheduling macros must be declared static.
+ */
  static int i;
 
  while (true)
